@@ -8,10 +8,7 @@ from collections import defaultdict, Counter
 
 
 def load_paths(path):
-    """
-    Load the list of file paths from a text file (one path per line).
-    Ignores empty lines and comments starting with '#'.
-    """
+    
     if not os.path.isfile(path):
         raise FileNotFoundError(f"Input file not found: {path}")
     items = []
@@ -25,12 +22,7 @@ def load_paths(path):
 
 
 def group_by_extension(paths):
-    """
-    Group paths by their file extension. Returns:
-      - counts: Counter mapping extension -> count
-      - groups: dict mapping extension -> list of files
-      - unknowns: list of files with no extension
-    """
+   
     groups = defaultdict(list)
     unknowns = []
     for p in paths:
